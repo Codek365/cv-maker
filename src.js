@@ -74,6 +74,15 @@ const reducers = [
 
 		return ossList ? `\n## Open Source${ossList}` : '';
 	},
+	function certifications (u) {
+		var certList = u.certifications && u.certifications.map(function (c) {
+			var title = c.title ? `\n#### ${c.title}` : '';
+			var earned = c.earned ? `\n${c.earned}` : '';
+			var till = c.till ? (earned ? ` - ${c.till}` : `\nValid Till: ${c.till}`) : '';
+			return title ? `${title}${earned}${till}\n${config.divider}` : '';
+		}).join('');
+		return certList ? `\n# Certifications${certList}` : '';
+	},
 	[
 		function writingHabits (u) {
 			return u.writingHabits ? `\n> ${u.writingHabits}` : '';

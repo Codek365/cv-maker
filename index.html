@@ -83,6 +83,19 @@
 					</fieldset>
 					<hr>
 					<fieldset class="form-group">
+						<h3>Certifications</h3>
+						<button way-action-push="inputData.certifications" class="btn btn-primary">Add Certification</button>
+						<fieldset class="form-group" way-repeat="inputData.certifications">
+							<label>Title</label>
+							<input class="form-control" way-persistent way-data="title" placeholder="Certified CV Creator">
+							<label>Earned In Year/Month</label>
+							<input class="form-control" way-persistent way-data="earned" placeholder="2016">
+							<label>Valid Till</label>
+							<input class="form-control" way-persistent way-data="till" placeholder="Lifetime">
+							<button way-action-remove="inputData.certifications.$$key" way-persistent class="btn btn-danger">Remove Certification</button>
+						</fieldset>
+					</fieldset>
+					<fieldset class="form-group">
 						<h3>Writing</h3>
 						<label>Your writing habits</label>
 						<textarea class="form-control" name="writingHabits" placeholder="we know you love blogging and that you are busy"></textarea>
